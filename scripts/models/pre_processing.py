@@ -21,7 +21,6 @@ def importar_dados():
     y_val= pd.read_csv("Train&TestData\\y_val.csv",index_col= False)
     y_test= pd.read_csv("Train&TestData\\y_test.csv",index_col= False)
     
-    print(X_train.head())
     return  X_train, X_val, X_test, y_train, y_val, y_test
 
 
