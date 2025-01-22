@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 import xgboost as xgb  # Importando o XGBoost
 from sklearn.pipeline import Pipeline
-from pre_processing import importar_dados, preprocessar_dados
+from modulos.model_pre_processing import importar_dados, preprocessar_dados
 from sklearn.model_selection import RandomizedSearchCV, KFold, cross_val_score
 from sklearn.metrics import mean_absolute_error
 from scipy.stats import randint

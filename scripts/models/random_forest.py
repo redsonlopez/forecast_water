@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 from sklearn.ensemble import RandomForestRegressor  
 from sklearn.pipeline import Pipeline
-from pre_processing import importar_dados, preprocessar_dados
+from modulos.model_pre_processing import importar_dados, preprocessar_dados
 from sklearn.model_selection import RandomizedSearchCV, KFold, cross_val_score
 from scipy.stats import randint
 import joblib
@@ -14,7 +14,6 @@ import joblib
 # A função 'preprocessar_dados' aplica transformações (como escalonamento e codificação) nos dados.
 X_train, X_val, X_test, y_train, y_val, y_test = importar_dados() 
 preprocessor = preprocessar_dados()
-
 # %%
 # Criando o modelo de regressão RandomForestRegressor
 # O 'random_state=42' garante que os resultados sejam reprodutíveis.
