@@ -93,8 +93,6 @@ def preprocessar_dados():
         
     # Selecionando variaveis numericas, categoricas e variaveis que devem ser removidas para evitar data leakage
     numerical_features = ['VALOR_FATURA_lag1','VALOR_FATURA_lag2']
-    ordinal_features = ['ANO_VENCIMENTO', 'MES_VENCIMENTO']
-
     
    
     preprocessor = ColumnTransformer(
