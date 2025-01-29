@@ -4,7 +4,7 @@ import numpy as np
 import xgboost as xgb  # Importando o XGBoost
 from sklearn.pipeline import Pipeline
 from modulos.model_pre_processing import importar_dados, preprocessar_dados
-from sklearn.model_selection import RandomizedSearchCV, KFold, cross_val_score
+from sklearn.model_selection import GridSearchCV, KFold, cross_val_score
 from sklearn.metrics import mean_absolute_error
 from scipy.stats import randint
 import joblib
@@ -29,35 +29,31 @@ pipeline = Pipeline(steps=[
 ])
 
 # %% 
-# Definindo os parâmetros a serem testados durante a busca de hiperparâmetros.
-# Estamos utilizando uma distribuição aleatória para parâmetros como 'n_estimators' e 'max_depth'.
-param_distributions = {
+param_grid = {
     'regressor__colsample_bytree': [0.3, 0.5, 0.7],
     'regressor__max_depth': [3, 5, 7],
     'regressor__learning_rate': [0.01, 0.1, 0.2],
     'regressor__n_estimators': [50, 100, 200]
 }
 
-# RandomizedSearchCV realiza uma busca aleatória nos parâmetros definidos acima.
-# Ele testa combinações aleatórias e avalia qual combinação tem o melhor desempenho.
-random_search = RandomizedSearchCV(
+# GridSearchCV testa todas as combinações possíveis dos hiperparâmetros definidos acima.
+grid_search = GridSearchCV(
     pipeline,  # O pipeline com o pré-processamento e o modelo.
-    param_distributions,  # O espaço de busca para os hiperparâmetros.
-    n_iter=10,  # Número de iterações para testar combinações aleatórias.
-    cv=5,  # Número de divisões (folds) para validação cruzada durante a busca.
-    scoring='neg_mean_absolute_error',  # A métrica a ser otimizada (erro absoluto médio negativo).
-    n_jobs=-1,  # Utiliza todos os núcleos de processamento disponíveis para acelerar a busca.
-    random_state=42  # Garante a reprodutibilidade da busca aleatória.
+    param_grid,  # O espaço de busca para os hiperparâmetros.
+    cv=5,  # Número de divisões (folds) para validação cruzada.
+    scoring='neg_mean_absolute_error',  # A métrica a ser otimizada.
+    n_jobs=-1  # Utiliza todos os núcleos de processamento disponíveis para acelerar a busca.
 )
 
-# Realiza a busca de hiperparâmetros ajustando o modelo aos dados de treinamento.
-random_search.fit(X_train, y_train)
-# Exibe os melhores parâmetros encontrados durante a busca.
-print("Melhores hiperparâmetros:", random_search.best_params_)
+grid_search.fit(X_train, y_train)  # Ajusta o GridSearchCV aos dados de treino
+
+print("Melhores hiperparâmetros:", grid_search.best_params_)
+print("Melhor score:", grid_search.best_score_)
+
 
 # %% 
 # Após a busca de hiperparâmetros, obtemos o modelo final treinado com os melhores parâmetros.
-xgboost_model = random_search.best_estimator_
+xgboost_model = grid_search.best_estimator_
 
 # %% [markdown]
 # ### Avaliando Resultado dos modelos
