@@ -1,6 +1,9 @@
 import pandas as pd 
 
 def formata_valores_fatura(data): 
+    
+    data['VALOR_FATURA'] = data['VALOR_FATURA'].astype(str)
+    
     # Remover os pontos (separadores de milhar) na coluna com os valores das faturas
     data['VALOR_FATURA'] = data['VALOR_FATURA'].str.replace('.', '', regex=False)
 
@@ -24,6 +27,7 @@ def remove_colunas(data):
     colunas_para_manter = ["MATRICULA", "DATA_VENCIMENTO", "BAIRRO", "VALOR_FATURA"]
     data = data[colunas_para_manter]
     return data
+
 
 
 
