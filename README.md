@@ -1,6 +1,6 @@
-# Predição de Custos com Água - PBH
+# Sistema de Previsão de Consumo de Água da PBH com Séries Temporais
 
-Este projeto visa analisar os dados de consumo de água da prefeitura, com o objetivo de prever custos futuros com base nos registros a partir do ano de 2022. 
+Aplicação web para análise e previsão do consumo de água da prefeitura, utilizando modelagem de séries temporais para estimar custos futuros com base nos registros a partir de 2022, com deploy em Streamlit Cloud.
 
 ---
 
