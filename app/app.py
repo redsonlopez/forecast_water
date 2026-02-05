@@ -15,7 +15,7 @@ st.sidebar.header("Prefeitura de Belo Horizonte")
 view_option = st.sidebar.radio('Escolha o tipo de exibição', ('Introdução', 'Previsão'))
 
 # Carregar o modelo treinado
-modelo_carregado = joblib.load("scripts/models/base_line.joblib")
+modelo_carregado = joblib.load("src/models/base_line.joblib")
 
 # Configurações do app
 st.title("Previsão do Consumo de Água")
