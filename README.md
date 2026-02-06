@@ -1,6 +1,16 @@
-# Predição de Custos com Água - PBH
+# Painel Interativo de Previsão do Consumo de Água com Séries Temporais
 
-Este projeto visa analisar os dados de consumo de água da prefeitura, com o objetivo de prever custos futuros com base nos registros a partir do ano de 2022. 
+Aplicação web desenvolvida para análise e previsão do consumo de água da Prefeitura de Belo Horizonte, utilizando modelagem de séries temporais para estimar custos futuros com base em dados históricos a partir de 2022.  
+O painel tem como objetivo apoiar a tomada de decisão e o planejamento eficiente dos recursos públicos.
+
+---
+
+A aplicação está disponível em nuvem via **Streamlit Cloud**:
+https://redsonlopez-forecast-water-appapp-ulo5y7.streamlit.app/
+
+Projeto desenvolvido em parceria por:
+- **Hedson Lopes** — https://www.linkedin.com/in/redsonlopez/
+- **Pedro Henrique** — https://www.linkedin.com/in/pedro-io/
 
 ---
 
