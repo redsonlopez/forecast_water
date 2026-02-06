@@ -5,7 +5,7 @@ O painel tem como objetivo apoiar a tomada de decisão e o planejamento eficient
 
 ---
 
-A aplicação está disponível em nuvem via **Streamlit Cloud**:
+A aplicação está disponível em nuvem via **Streamlit Cloud**:<br>
 https://redsonlopez-forecast-water-appapp-ulo5y7.streamlit.app/
 
 Projeto desenvolvido em parceria por:
