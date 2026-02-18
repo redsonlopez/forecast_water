@@ -2,8 +2,8 @@
 import joblib
 import streamlit as st
 from data.load_data import importando_dados
-from data.data_processing import filtrar_matricula, gerar_serie
 from data.modeling import prever_series
+from filter import filtrar_matricula, gerar_serie
 from graphcs import plotar_serie_e_previsao
 
 st.set_page_config(

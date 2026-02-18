@@ -7,7 +7,7 @@ from sklearn.preprocessing import  OneHotEncoder
 pd.set_option('display.max_rows', None)
 
 #%% 
-data = pd.read_csv("..\\..\\data\\processed\\processed_water.csv")
+data = pd.read_csv("../../data/processed/processed_water.csv")
 # %%
 data.info()
 
@@ -94,6 +94,6 @@ data_zero.head()
 # %%
 data_zero['VALOR_FATURA'].value_counts()
 # %%
-data.to_csv("..\\..\\data\\processed\\final_data.csv")
+data.to_csv("../../data/processed/final_data.csv")
 
 # %%

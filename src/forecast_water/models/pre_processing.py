@@ -14,12 +14,12 @@ def importar_dados():
         data: dataframe pandas com os dados para o modelo
     """
     # Carregar os dados
-    X_train= pd.read_csv("Train&TestData\\X_train.csv", index_col= False)
-    X_val= pd.read_csv("Train&TestData\\X_val.csv",index_col= False)
-    X_test= pd.read_csv("Train&TestData\\X_test.csv",index_col= False)
-    y_train= pd.read_csv("Train&TestData\\y_train.csv",index_col= False)
-    y_val= pd.read_csv("Train&TestData\\y_val.csv",index_col= False)
-    y_test= pd.read_csv("Train&TestData\\y_test.csv",index_col= False)
+    X_train= pd.read_csv("../../data/train_test/X_train.csv", index_col= False)
+    X_val= pd.read_csv("../../data/train_test/X_val.csv",index_col= False)
+    X_test= pd.read_csv("../../data/train_test/X_test.csv",index_col= False)
+    y_train= pd.read_csv("../../data/train_test/y_train.csv",index_col= False)
+    y_val= pd.read_csv("../../data/train_test/y_val.csv",index_col= False)
+    y_test= pd.read_csv("../../data/train_test/y_test.csv",index_col= False)
     
     return  X_train, X_val, X_test, y_train, y_val, y_test
 
