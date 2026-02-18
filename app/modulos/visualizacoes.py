@@ -73,5 +73,3 @@ def plotar_serie_e_previsao(matricula, dados_matricula, valor_previsto):
 
     return fig
 
-
-

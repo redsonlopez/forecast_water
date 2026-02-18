@@ -10,7 +10,7 @@ https://redsonlopez-forecast-water-appapp-ulo5y7.streamlit.app/
 
 Projeto desenvolvido em parceria por:
 - **Hedson Lopes** — https://www.linkedin.com/in/redsonlopez/
-- **Pedro Henrique** — https://www.linkedin.com/in/pedro-io/
+- **Pedro Rodrigues** — https://www.linkedin.com/in/pedro-io/
 
 ---
 
