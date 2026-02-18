@@ -1,9 +1,9 @@
-# modulos/modelagem.py
+# modulos/modeling.py
 import joblib
 import pandas as pd
 
 # Carregar o modelo treinado
-modelo_carregado = joblib.load("src/models/base_line.joblib")
+modelo_carregado = joblib.load("models/base_line.joblib")
 
 def prever_series(series):
     """

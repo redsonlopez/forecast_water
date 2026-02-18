@@ -1,10 +1,10 @@
 # streamlit_app.py
-import streamlit as st
-from modulos.importando_dados import importando_dados
-from modulos.tratando_dados import filtrar_matricula, gerar_serie
-from modulos.visualizacoes import plotar_serie_e_previsao
-from modulos.modelagem import prever_series
 import joblib
+import streamlit as st
+from data.load_data import importando_dados
+from data.data_processing import filtrar_matricula, gerar_serie
+from data.modeling import prever_series
+from graphcs import plotar_serie_e_previsao
 
 st.set_page_config(
     page_title="Consumo de Água - PBH",
@@ -15,7 +15,7 @@ st.sidebar.header("Prefeitura de Belo Horizonte")
 view_option = st.sidebar.radio('Escolha o tipo de exibição', ('Introdução', 'Previsão'))
 
 # Carregar o modelo treinado
-modelo_carregado = joblib.load("src/models/base_line.joblib")
+modelo_carregado = joblib.load("models/base_line.joblib")
 
 # Configurações do app
 st.title("Previsão do Consumo de Água")
