@@ -26,3 +26,5 @@ venv/
 *.pyo
 *__pycache__/
 
+# Setuptools
+*.egg-info/
